@@ -20,7 +20,7 @@
 var myApp = {}
 $(document).ready(function(){
   myApp.User = Backbone.Model.extend({
-    urlRoot: 'http://localhost:3000/api/v1/users',
+    urlRoot: '/api/v1/users',
     parse: function(response) {
       if(response.user){
         return response.user
@@ -53,8 +53,8 @@ $(document).ready(function(){
   })
 
   myApp.Users = Backbone.Collection.extend({
-    url: 'http://localhost:3000/api/v1/users',
-    urlRoot: 'http://localhost:3000/api/v1/users/',
+    url: '/api/v1/users',
+    urlRoot: '/api/v1/users/',
     parse: function(data) {
       return data.users
     },
