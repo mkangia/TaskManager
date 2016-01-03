@@ -3,6 +3,7 @@ $(document).ready(function(){
     routes: {
       "home": "home",
       "users" : "users",
+      "tasks" : "tasks",
       "users/new": "newUser",
       "users/:id": "showUser",
       "users/:id/edit": "editUser"
@@ -35,9 +36,17 @@ $(document).ready(function(){
     users: function() {
       this.cleanViews();
       if(myApp.userListView) {
-        myApp.userListView.render();
+        myApp.userListView.initialize();
       } else {
         myApp.userListView = new myApp.UserListView();
+      }
+    },
+    tasks: function() {
+      this.cleanViews();
+      if(myApp.taskListView) {
+        myApp.taskListView.initialize();
+      } else {
+        myApp.taskListView = new myApp.TaskListView();
       }
     },
     newUser: function() {
@@ -50,19 +59,11 @@ $(document).ready(function(){
     },
     showUser: function(id) {
       this.cleanViews();
-      if(myApp.userShowView) {
-        myApp.userShowView.render()
-      } else {
-        myApp.userShowView= new myApp.UserShowView(id);
-      }
+      myApp.userShowView = new myApp.UserShowView(id);
     },
     editUser: function(id) {
       this.cleanViews();
-      if(myApp.userEditView) {
-        myApp.userEditView.render();
-      } else {
-        myApp.UserEditView = new myApp.UserEditView(id);
-      }
+      myApp.userEditView = new myApp.UserEditView(id);
     }
   });
   

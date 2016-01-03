@@ -1,6 +1,6 @@
 $(document).ready(function(){
   myApp.UserView = Backbone.View.extend({
-    tagName: 'p',
+    tagName: 'tr',
     events: {
       'click .edit' : 'edit',
       'click .delete' : 'deleteUser',

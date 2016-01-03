@@ -8,7 +8,6 @@ $(document).ready(function(){
         }
       });
     },
-    tagName: 'li',
     el: '#userListView',
     addUser: function(user) {
       user.listView = new myApp.UserView;
@@ -16,7 +15,7 @@ $(document).ready(function(){
       this.$el.append(user.listView.render().el);
     },
     render: function(){
-      this.$el.html('');
+      this.$el.html('<thead><tr><th>Email</th><th>FullName</th><th>Phone</th><th>Gender</th><th>Actions</th></tr></thead>');
       _.each(myApp.users.models, function(member){
         myApp.userListView.addUser(member);
       });
