@@ -24,6 +24,9 @@ $(document).ready(function(){
       if(myApp.profileView) {
         myApp.profileView.clean();
       }
+      if(myApp.taskListView) {
+        myApp.taskListView.clean();
+      }
     },
     home: function() {
       this.cleanViews();
