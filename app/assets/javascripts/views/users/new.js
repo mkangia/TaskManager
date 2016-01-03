@@ -1,16 +1,14 @@
 $(document).ready(function(){
-  myApp.UserEditView = Backbone.View.extend({
+  myApp.UserNewView = Backbone.View.extend({
     el: '#userEditView',
     events: {
       'click .save' : 'submitUser'
     },
     template: JST['templates/users/form'],
-    initialize: function(id) {
+    initialize: function() {
       var self = this;
-      this.model = new myApp.User({id: id});
-      this.model.fetch({
-        success: function() { self.render(); }
-      })
+      this.model = new myApp.User;
+      this.render();
     },
     render: function(){
       this.$el.html(this.template(this.model));
@@ -29,8 +27,8 @@ $(document).ready(function(){
           success: function(model, response) {
             myApp.router.navigate('#/users');
           },
-          error: function(model, response, options){
-            self.reportError(response.responseJSON.error)
+            error: function(model, response, options){
+              self.reportError(response.responseJSON.error)
           }
         }
       )

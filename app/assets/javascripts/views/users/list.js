@@ -16,11 +16,14 @@ $(document).ready(function(){
       this.$el.append(user.listView.render().el);
     },
     render: function(){
+      this.$el.html('');
       _.each(myApp.users.models, function(member){
         myApp.userListView.addUser(member);
       });
+      return this;
+    },
+    clean: function() {
+      this.$el.html('');
     }
   });
-
-  myApp.userListView = new myApp.UserListView();
 });

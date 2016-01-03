@@ -6,6 +6,7 @@
 <span><%= get('phone') %></span>
 <span>Gender:</span>
 <span><%= get('gender') %>
-<input type=button class=edit value=Edit>
+<a href=#/users/<%= get('id') %>>Show</a>
+<a href=#/users/<%= get('id') %>/edit>Edit</a>
 <input type=button class=delete value=delete>
 <div class=error></div>

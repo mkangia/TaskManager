@@ -12,8 +12,7 @@ $(document).ready(function(){
       return this;
     },
     edit: function(){
-      myApp.userEditView.model = this.model;
-      myApp.userEditView.render();
+      myApp.userEditView = new myApp.UserEditView(this.model.get('id'));
     },
     updateContent: function(){
       this.render();
@@ -21,9 +20,6 @@ $(document).ready(function(){
     deleteUser: function(){
       myApp.users.remove(this.model);
       this.$el.remove();
-    },
-    reportError: function(msg){
-      this.$el.find('.error').html(msg);
     }
   });
 });

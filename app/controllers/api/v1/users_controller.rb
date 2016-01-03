@@ -3,6 +3,10 @@ class Api::V1::UsersController < ApplicationController
     render json: { users: User.all.to_a }
   end
 
+  def show
+    render json: { user: User.find(params[:id]) }
+  end
+
   def create
     user = User.new(permitted_user_params)
     if user.save
@@ -17,7 +21,7 @@ class Api::V1::UsersController < ApplicationController
     if user.update_attributes(permitted_user_params)
       render json: { user: user, success: true}, status: 200
     else
-      render json: { user: user, success: false, error: 'Could not update because'}, status: 400
+      render json: { user: user, success: false, error: "Could not update because #{user.errors.full_messages.to_sentence}"}, status: 400
     end
   end
 
