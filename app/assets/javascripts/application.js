@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require underscore-min
 //= require backbone-min
-//= require_tree .
+//= require app

@@ -48,6 +48,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.6.0)
     hike (1.2.3)
@@ -134,6 +135,7 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-rails
   coffee-rails (~> 4.0.0)
+  ejs
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
