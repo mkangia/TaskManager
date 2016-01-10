@@ -12,7 +12,7 @@ class Api::V1::TasksController < ApplicationController
     if task.save
       render json: { task: task, success: true}, status: 200
     else
-      render json: { task: task, success: false, error: "Could not update because #{task.errors.full_messages.to_sentence}"}, status: 400
+      render json: { task: task, success: false, error: "Could not create because #{task.errors.full_messages.to_sentence}"}, status: 400
     end
   end
 
@@ -27,6 +27,6 @@ class Api::V1::TasksController < ApplicationController
 
   private
     def permitted_task_params
-      params.permit(:user_id, :task, :start_date, :end_date, :completed)
+      params.permit(:user_id, :goal, :start_date, :end_date, :completed)
     end
 end

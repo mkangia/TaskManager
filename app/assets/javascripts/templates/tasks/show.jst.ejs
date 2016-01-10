@@ -1,7 +1,7 @@
 <table class='table table-striped text-center'>
   <tr>
     <td>Task:</td>
-    <td><%= get('task') %></td>
+    <td><%= get('goal') %></td>
   </tr>
   <tr>
     <td>Start Date:</td>
@@ -13,7 +13,11 @@
   </tr>
   <tr>
     <td>User:</td>
-    <td><%= get('userName') %></td>
+    <td><%= userName() %></td>
+  </tr>
+  <tr>
+    <td>Completed</td>
+    <td><%= statusMessage() %></td>
   </tr>
 </table>
-<a href=#/users/<%= get('id') %>/edit class='btn btn-info'>Edit</a>
+<a href=#/tasks/<%= get('id') %>/edit class='btn btn-info'>Edit</a>

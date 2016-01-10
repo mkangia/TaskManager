@@ -7,9 +7,12 @@ $(document).ready(function(){
       "tasks/new" : "newTask",
       "users/new": "newUser",
       "users/:id": "showUser",
-      "users/:id/edit": "editUser"
+      "tasks/:id": "showTask",
+      "users/:id/edit": "editUser",
+      "tasks/:id/edit": "editTask"
     },
     cleanViews: function() {
+      appView.$el.find('#appNotice').html('').removeClass('alert');
       if(myApp.userListView) {
         myApp.userListView.clean();
       }
@@ -56,18 +59,26 @@ $(document).ready(function(){
     },
     tasks: function() {
       this.cleanViews();
-      if(myApp.taskListView) {
-        myApp.taskListView.initialize();
+      if(myApp.users.length == 0) {
+        appView.$el.find('#appNotice').html('No Users Present in System').addClass('alert');
       } else {
-        myApp.taskListView = new myApp.TaskListView();
+        if(myApp.taskListView) {
+          myApp.taskListView.initialize();
+        } else {
+          myApp.taskListView = new myApp.TaskListView();
+        }
       }
     },
     newTask: function() {
       this.cleanViews();
-      if(myApp.taskNewView) {
-        myApp.taskNewView.render();
+      if(myApp.users.length == 0) {
+        appView.$el.find('#appNotice').html('No Users Present in System').addClass('alert');
       } else {
-        myApp.taskNewView = new myApp.TaskNewView();
+        if(myApp.taskNewView) {
+          myApp.taskNewView.render();
+        } else {
+          myApp.taskNewView = new myApp.TaskNewView();
+        }
       }
     },
     newUser: function() {
@@ -82,9 +93,25 @@ $(document).ready(function(){
       this.cleanViews();
       myApp.userShowView = new myApp.UserShowView(id);
     },
+    showTask: function(id) {
+      if(myApp.users.length == 0) {
+        appView.$el.find('#appNotice').html('No Users Present in System').addClass('alert');
+      } else {
+        this.cleanViews();
+        myApp.taskShowView = new myApp.TaskShowView(id);
+      }
+    },
     editUser: function(id) {
       this.cleanViews();
       myApp.userEditView = new myApp.UserEditView(id);
+    },
+    editTask: function(id) {
+      if(myApp.users.length == 0) {
+        appView.$el.find('#appNotice').html('No Users Present in System').addClass('alert');
+      } else {
+        this.cleanViews();
+        myApp.taskEditView = new myApp.TaskEditView(id);
+      }
     }
   });
   

@@ -9,7 +9,7 @@ $(document).ready(function(){
     },
     defaults: {
       id: null,
-      task: 'ToDo',
+      goal: 'ToDo',
       start_date: '2015-01-01',
       end_date: '2015-01-01',
       completed: false,
@@ -21,7 +21,10 @@ $(document).ready(function(){
     notifyChange: function(myself) {
     },
     statusMessage: function() {
-      return this.get('completed') == 'true' ? 'Wrapped Up' : 'Pending'
+      return this.get('completed') == true ? 'Wrapped Up' : 'Pending'
+    },
+    userName: function() {
+      return myApp.users.findWhere({id: this.get('user_id')}).completeName();
     }
   })
 });

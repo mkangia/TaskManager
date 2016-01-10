@@ -13,19 +13,18 @@ $(document).ready(function(){
       })
     },
     render: function(){
-      var data = {task : this.model, users : myApp.users};
+      var data = {task : this.model, users : myApp.users.models};
       this.$el.html(this.template(data));
       this.$el.find('.user_id').val(this.model.get('user_id'));
-      this.$el.find('.completed').checked = this.model.get('completed');
+      this.$el.find('.completed')[0].checked = this.model.get('completed');
       return this;
     },
     submitTask: function(){
-      this.model.set('task', this.$el.find('.task').val());
+      this.model.set('goal', this.$el.find('.goal').val());
       this.model.set('start_date', this.$el.find('.start_date').val());
       this.model.set('end_date', this.$el.find('.end_date').val());
       this.model.set('user_id', this.$el.find('.user_id').val());
-      this.model.set('completed', this.$el.find('.completed').checked);
-      console.log(this.model);
+      this.model.set('completed', this.$el.find('.completed')[0].checked);
       var self = this;
       this.model.save({},
         { wait: true,

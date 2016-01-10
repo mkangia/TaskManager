@@ -15,7 +15,7 @@ $(document).ready(function(){
       this.$el.append(task.listView.render().el);
     },
     render: function(){
-      this.$el.html('<thead><tr><th>Task</th><th>StartDate</th><th>EndDate</th><th>Completed</th><th>Actions</th></tr></thead>');
+      this.$el.html('<thead><tr><th>Goal</th><th>StartDate</th><th>EndDate</th><th>Completed</th><th>AssignedTo</th><th>Actions</th></tr></thead>');
       _.each(myApp.tasks.models, function(member){
         myApp.taskListView.addTask(member);
       });

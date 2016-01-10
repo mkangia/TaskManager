@@ -11,13 +11,13 @@ $(document).ready(function(){
       this.render();
     },
     render: function(){
-      this.$el.html(this.template({ task : this.model, users : myApp.users}));
+      this.$el.html(this.template({ task : this.model, users : myApp.users.models}));
       this.$el.find('.user_id').val(this.model.get('user_id'));
       this.$el.find('.completed').checked = this.model.get('completed');
       return this;
     },
     submitTask: function(){
-      this.model.set('task', this.$el.find('.task').val());
+      this.model.set('goal', this.$el.find('.goal').val());
       this.model.set('start_date', this.$el.find('.start_date').val());
       this.model.set('end_date', this.$el.find('.end_date').val());
       this.model.set('user_id', this.$el.find('.user_id').val());

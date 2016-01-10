@@ -15,5 +15,5 @@ $(document).ready(function(){
     }
   });
 
-  var appView = new myApp.AppView();
+  appView = new myApp.AppView();
 });

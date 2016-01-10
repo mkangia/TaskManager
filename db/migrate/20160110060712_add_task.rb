@@ -1,7 +1,7 @@
 class AddTask < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
-      t.string :task
+      t.string :goal
       t.references :user
       t.date :start_date
       t.date :end_date
