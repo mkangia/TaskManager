@@ -1,0 +1,27 @@
+<table class='table table-striped text-center'>
+  <tr>
+    <td>Task:</td>
+    <td><input class=task value=<%= task.get('task') %> /></td>
+  </tr>
+  <tr>
+    <td>StartDate:</td>
+    <td><input class=start_date value=<%= task.get('start_date') %> /></td>
+  </tr>
+  <tr>
+    <td>LastName:</td>
+    <td><input class=end_date value=<%= task.get('end_date') %> /></td>
+  </tr>
+    <td>User:</td>
+    <td>
+      <select class='user'>
+      <% for(var i=0; i < users.length; i++) {%>
+        <option value=<%= user.get('id') %> >
+          <%= user.completeName() %>
+        </option>
+      <% } %>
+      </select>
+    </td>
+  </tr>
+</table>
+<input type=button class='save btn btn-primary' value=Save />
+<div class=error></div>

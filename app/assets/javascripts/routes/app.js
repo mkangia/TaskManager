@@ -4,6 +4,7 @@ $(document).ready(function(){
       "home": "home",
       "users" : "users",
       "tasks" : "tasks",
+      "tasks/new" : "newTask",
       "users/new": "newUser",
       "users/:id": "showUser",
       "users/:id/edit": "editUser"
@@ -26,6 +27,15 @@ $(document).ready(function(){
       }
       if(myApp.taskListView) {
         myApp.taskListView.clean();
+      }
+      if(myApp.taskShowView) {
+        myApp.taskShowView.clean();
+      }
+      if(myApp.taskEditView) {
+        myApp.taskEditView.clean();
+      }
+      if(myApp.taskNewView) {
+        myApp.taskNewView.clean();
       }
     },
     home: function() {
@@ -50,6 +60,14 @@ $(document).ready(function(){
         myApp.taskListView.initialize();
       } else {
         myApp.taskListView = new myApp.TaskListView();
+      }
+    },
+    newTask: function() {
+      this.cleanViews();
+      if(myApp.taskNewView) {
+        myApp.taskNewView.render();
+      } else {
+        myApp.taskNewView = new myApp.TaskNewView();
       }
     },
     newUser: function() {

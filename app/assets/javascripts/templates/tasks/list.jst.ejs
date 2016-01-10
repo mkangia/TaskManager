@@ -1,0 +1,8 @@
+<td><a href=#/tasks/<%= get('id') %>><%= get('task') %></a></td>
+<td><%= get('start_date') %></td>
+<td><%= get('end_date') %></td>
+<td><%= statusMessage() %></td>
+<td>
+<a href=#/tasks/<%= get('id') %>/edit>Edit</a>
+<a href=#/tasks/<%= get('id') %>/delete>Remove</a>
+</td>
