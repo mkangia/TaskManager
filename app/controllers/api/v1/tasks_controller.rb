@@ -1,10 +1,10 @@
 class Api::V1::TasksController < ApplicationController
   def index
-    render json: { tasks: Task.all.to_a }
+    render json: { tasks: Task.all.as_json({ methods: :instruction_url }) }
   end
 
   def show
-    render json: { task: Task.find(params[:id]) }
+    render json: { task: Task.find(params[:id]).as_json({ methods: :instruction_url }) }
   end
 
   def create
@@ -27,6 +27,6 @@ class Api::V1::TasksController < ApplicationController
 
   private
     def permitted_task_params
-      params.permit(:user_id, :goal, :start_date, :end_date, :completed)
+      params.permit(:user_id, :goal, :start_date, :end_date, :completed, :instruction)
     end
 end

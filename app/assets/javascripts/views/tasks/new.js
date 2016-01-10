@@ -22,6 +22,7 @@ $(document).ready(function(){
       this.model.set('end_date', this.$el.find('.end_date').val());
       this.model.set('user_id', this.$el.find('.user_id').val());
       this.model.set('completed', this.$el.find('.completed').checked);
+      this.model.set('instruction', this.$el.find('.instruction')[0].files[0]);
       var self = this;
       this.model.save({},
         { wait: true,

@@ -19,5 +19,10 @@
     <td>Completed</td>
     <td><%= statusMessage() %></td>
   </tr>
+  <tr>
+    <td>Instruction</td>
+    <td><img src=<%= get('instruction_url') %> >
+    </td>
+  </tr>
 </table>
 <a href=#/tasks/<%= get('id') %>/edit class='btn btn-info'>Edit</a>
