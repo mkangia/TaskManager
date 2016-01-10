@@ -36,5 +36,6 @@ gem 'capistrano-rails', group: :development
 gem 'capistrano-passenger', group: :development
 gem 'ejs'
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development]
 
+gem 'paperclip'
