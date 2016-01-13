@@ -15,3 +15,9 @@
 //= require underscore-min
 //= require backbone-min
 //= require app
+//= require_self
+
+$(document).ready(function(){
+  $('.alert-info').fadeOut(3000)
+  $('.alert-danger').fadeOut(3000)
+});

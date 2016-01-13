@@ -23,6 +23,7 @@ $(document).ready(function(){
       this.model.set('phone', this.$el.find('.phone').val());
       this.model.set('gender', this.$el.find('.gender').val());
       this.model.set('email', this.$el.find('.email').val());
+      this.model.set('password', this.$el.find('.password').val());
       var self = this;
       this.model.save({},
         { wait: true,

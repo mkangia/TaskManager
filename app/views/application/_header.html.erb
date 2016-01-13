@@ -1,0 +1,25 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='col-md-7 tar'>
+      <h1>TaskManagement</h1>
+    </div>
+    <div class='links-container col-md-3 mt20 col-md-offset-2'>
+      <% if current_user %>
+        <div class='link'>
+          <%= button_to 'SignOut', signout_path, class: 'btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <% if flash[:notice].present? %>
+    <div class="alert alert-info col-md-12" role="alert">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <% if flash[:error].present? %>
+    <div class="alert alert-danger col-md-12" role="alert">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+</div>

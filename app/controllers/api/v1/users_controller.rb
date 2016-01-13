@@ -27,6 +27,6 @@ class Api::V1::UsersController < ApplicationController
 
   private
     def permitted_user_params
-      params.permit(:firstname, :lastname, :phone, :gender, :email, :active)
+      params.permit(:firstname, :lastname, :phone, :gender, :email, :active, :password)
     end
 end

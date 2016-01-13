@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'sessions#new'
 
+  get 'dashboard' => 'home#index', as: :dashboard
   namespace :api do
     namespace :v1 do
       resources :users
@@ -12,6 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'login' => 'sessions#new', as: :login
+  post 'signin' => 'sessions#create', as: :signin
+  post 'signout' => 'sessions#destroy', as: :signout
   # get 'home' => 'home#index'
 
   # Example of regular route:

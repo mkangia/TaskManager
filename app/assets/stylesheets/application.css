@@ -29,3 +29,21 @@
  table th {
   text-align: center;
  }
+ .links-container .link {
+  float: right;
+ }
+ .fs20 {
+  font-size: 20px;
+ }
+ .nav-list {
+  margin-left: 40px;
+ }
+ .nav-list-container {
+  margin-left: 27%;
+ }
+ .tar {
+  text-align: right;
+ }
+ .input-group {
+  padding-bottom: 5px;
+ }
