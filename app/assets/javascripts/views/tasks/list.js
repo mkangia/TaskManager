@@ -20,9 +20,6 @@ $(document).ready(function(){
         myApp.taskListView.addTask(member);
       });
       return this;
-    },
-    clean: function() {
-      this.$el.html('');
     }
   });
 });

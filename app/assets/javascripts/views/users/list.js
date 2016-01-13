@@ -20,9 +20,6 @@ $(document).ready(function(){
         myApp.userListView.addUser(member);
       });
       return this;
-    },
-    clean: function() {
-      this.$el.html('');
     }
   });
 });

@@ -17,9 +17,6 @@ $(document).ready(function(){
       this.$el.html('');
       this.$el.html(this.template(this.model));
       return this;
-    },
-    clean: function() {
-      this.$el.html('');
     }
   });
 });

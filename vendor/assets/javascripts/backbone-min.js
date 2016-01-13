@@ -173,3 +173,8 @@
   Backbone.Model = BackboneModelFileUpload;
 
 }));
+
+Backbone.View.prototype.clean = function() {
+  if (this.$el) this.$el.html('');
+  this.undelegateEvents();
+}

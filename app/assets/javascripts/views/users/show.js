@@ -15,9 +15,6 @@ $(document).ready(function(){
       this.$el.html('');
       this.$el.html(this.template(user));
       return this;
-    },
-    clean: function() {
-      this.$el.html('');
     }
   });
 });

@@ -35,9 +35,6 @@ $(document).ready(function(){
     },
     reportError: function(msg){
       this.$el.find('.error').html(msg);
-    },
-    clean: function() {
-      this.$el.html('');
     }
   });
 });
